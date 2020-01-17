@@ -9,21 +9,23 @@ namespace Lab2.Controllers
     public class ProductsController : Controller
     {
         // GET: Products
+
         public ActionResult Index()
         {
 
 
             string[] products = { "Laptop", "Tablet", "Mobile" };
-            
+
             ViewData["products"] = products;
-            
+
             return View();
-         
+
         }
-        public String Details(string product)
+        public ActionResult Details(string product)
         {
-            string message = "You have selected" +product;
-            return message;
+            ViewBag.Message = "You have selected " + product;
+            return View();
+
 
         }
     }
